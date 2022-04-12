@@ -14,15 +14,30 @@
             display: flex;
             color: #ffffff;
             align-items: center;
+            flex-direction: column;
             justify-content: center;
             font-family: sans-serif;
             background: rgb(70, 227, 255);
+        }
+        .text-danger {
+            color: red;
+        }
+        #text-dark {
+            color: black;
+        }
+        .is-size-1 {
+            font-size: 30px;
         }
     </style>
 </head>
 <body>
     <h1>This is starting of <strong>Web Helper</strong> created by Nurullo Salaydinov</h1>
-
+    <p .text-danger.is-size-1>This is element with class text danger and size 1</p>
+    <p #text-dark>This is element with id text dark</p>
+    
     <script src="base/base.js"></script>
+    <script>
+        InitializeAttributes()
+    </script>
 </body>
 </html>
