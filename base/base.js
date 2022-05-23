@@ -4,7 +4,6 @@
 
 // INITIALIZE ATTRIBUTES
 
-
 function InitializeAttributes() {
     document.querySelectorAll("*").forEach(elem => {
         let attr_list = elem.attributes ? Object.values(elem.attributes) : {}
@@ -44,4 +43,10 @@ function InitializeAttributes() {
     });
 }
 
-console.log("SUCCESSFULLY WORKED !\nNO BUGS FOUND\nIF YOU FIND ANY BUG\nCONTACT SALAYDINOVNURULLO@GMAIL.COM")
+function AddActiveClass(element, className) {
+    elem = eval(`document.querySelector('.${element}')`)
+    // console.log(elem)
+    elem.classList.add(`${className}`)
+}
+
+// console.log("SUCCESSFULLY WORKED !\nNO BUGS FOUND\nIF YOU FIND ANY BUG\nCONTACT SALAYDINOVNURULLO@GMAIL.COM")
