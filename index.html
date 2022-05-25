@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>This is base js example page</title>
+    <title>Web Page Helper</title>
     <style>
         body {
             margin: 0;
@@ -39,18 +39,29 @@
     </style>
 </head>
 <body>
+
     <h1>This is starting of <strong>Web Helper</strong> created by Nurullo Salaydinov</h1>
+    <h3 style="font-family: cursive;font-weight: 900;font-size: 2.5em">This is styled Text</h3>
     <p .text-danger.is-size-1>This is element with class text danger and size 1</p>
     <p #text-dark>This is element with id text dark</p>
-    <p onclick="AddActiveClass('hidden', 'active')">Click This To Open Hidden Text</p>
+    <p onclick="AddClassName('hidden', 'active'), AddId('hidden', 'active')">Click This To Open Hidden Text</p>
 
     <p class="hidden">
         Hidden Text Opened By Clicking Function ! add this AddActiveClass(element, className) function to add class which element you want to add
     </p>
     
     <script src="base/base.js"></script>
-    <script>
-        InitializeAttributes()
+    <script type="module">
+        InitializeAttributes();
+        ActivateStyle();
+        var fs = require('fs');
+
+        const dir = './database/temp';
+        if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir, {
+                recursive: true
+            });
+        }
     </script>
 </body>
 </html>
