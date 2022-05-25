@@ -1,4 +1,6 @@
 // THAT WAS MADE FROM NURLLO SALAYDINOV
+// CONTACT salaydinovnurullo@gmail.com
+// FOR BUGS AND CONTRIBUTION ^
 
 // INITIALIZE ATTRIBUTES
 
@@ -38,24 +40,53 @@ function AddId(element, idName) { // function add id
 };
 
 function ActivateStyle() {
-    let styleList = {};
+
+    var styleObject = {
+
+        styleList: [],
+    
+        addElement: function(obj) { 
+            this.styleList.push(obj)
+        },
+
+        prepareProduction: function() {
+            let preparedStyles = '\n'
+            for (let element of this.styleList) {
+                preparedStyles += `.${element.className}{${element.style}}\n`
+            }
+            return preparedStyles
+        },
+
+        pushToStyleTag: function() {
+            let styleTag = document.createElement('style');
+            styleTag.textContent = this.prepareProduction();
+            document.head.appendChild(styleTag);
+        }
+
+    };
+    
     document.querySelectorAll('*').forEach(elem => {
         conditional = elem.attributes['style'];
         if (conditional) {
-            styleList += `${conditional.nodeValue}\n`
+            randomChar = randomClassName();
+            styleObject.addElement(
+                {'className': randomChar,'style': conditional.nodeValue}
+            );
+            styleObject.pushToStyleTag();
+            elem.setAttribute('class', randomChar);
+            elem.removeAttribute('style');
         };
     });
-    // console.log(styleList);
+
     function randomClassName() {
-        let chars = 'qwertyuiopasdfghjklzxcvbnm';
+        let chars = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJLZXCVBNM';
         let className = '';
-        for (let i = 0; i < Math.floor(Math.random() * 20); i++) {
+        for (let i = 0; i < 11; i++) {
             className += chars[Math.floor(Math.random() * chars.length)]
         }
-        console.log(className);
+        return className
     }
 
-    randomClassName();
 };
 
 // console.log("SUCCESSFULLY WORKED !\nNO BUGS FOUND\nIF YOU FIND ANY BUG\nCONTACT SALAYDINOVNURULLO@GMAIL.COM")
