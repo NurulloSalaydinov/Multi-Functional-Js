@@ -34,12 +34,17 @@ function AddClassName(element, className) { // function add class name
     elem.classList.add(`${className}`);
 };
 
+function ToggleClassName(element, className) { // function toggle class
+    elem = eval(`document.querySelector('.${element}')`);
+    elem.classList.toggle(`${className}`);
+}
+
 function AddId(element, idName) { // function add id
     elem = eval(`document.querySelector('.${element}')`);
     elem.setAttribute('id', `${idName}`);
 };
 
-function ActivateStyle() {
+function ActivateStyle() { // function activate style
 
     var styleObject = {
 

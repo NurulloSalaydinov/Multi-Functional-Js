@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multi Functional Js</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
     <style>
         body {
             margin: 0;
@@ -14,10 +15,10 @@
             display: flex;
             color: #ffffff;
             align-items: center;
+            background: #000000;
             flex-direction: column;
             justify-content: center;
             font-family: sans-serif;
-            background: rgb(70, 227, 255);
         }
         .text-danger {
             color: red;
@@ -31,7 +32,7 @@
         .hidden {
             display: none;
             font-size: 1em;
-            color: #000;
+            color: blue;
         }
         .hidden.active {
             display: block;
@@ -39,12 +40,12 @@
     </style>
 </head>
 <body>
-
+    <img src="logo.png" alt="">
     <h1>This is starting of <strong>Web Helper</strong> created by Nurullo Salaydinov</h1>
     <h3 style="font-family: cursive;font-weight: 900;font-size: 2.5em">This is styled Text</h3>
     <p .text-danger.is-size-1>This is element with class text danger and size 1</p>
     <p #text-dark>This is element with id text dark</p>
-    <p onclick="AddClassName('hidden', 'active'), AddId('hidden', 'active')">Click This To Open Hidden Text</p>
+    <p onclick="AddClassName('hidden', 'active')">Click This To Open Hidden Text</p>
 
     <p class="hidden">
         Hidden Text Opened By Clicking Function ! add this AddActiveClass(element, className) function to add class which element you want to add
